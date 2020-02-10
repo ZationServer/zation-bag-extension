@@ -1,15 +1,15 @@
 {
   "name": "zation-bag-extension",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "API for Zation bag extensions",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepare": "npm run build",
-    "pretest": "npm run build",
     "build": "npm run compile",
-    "compile": "tsc -p ./"
+    "compile": "tsc -p ./",
+    "prepublishOnly": "npm run build",
+    "pretest": "npm run build"
   },
   "repository": {
     "type": "git",
