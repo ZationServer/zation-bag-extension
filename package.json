@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run compile",
-    "compile": "tsc -p ./",
+    "compile": "rm -rf dist/ && tsc -p ./",
     "prepublishOnly": "npm run build",
     "pretest": "npm run build"
   },
