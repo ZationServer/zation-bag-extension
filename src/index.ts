@@ -5,10 +5,11 @@ GitHub: LucaCode
  */
 
 import BagExtension from "./lib/bagExtension";
-import {bagExtensionGlobalKey, registerBagExtension} from "./lib/registerBagExtension";
+import {bagExtensionGlobalKey, getGlobalRegisteredBagExtensions, registerBagExtension} from "./lib/managerFunctions";
 
 export {
     BagExtension,
     registerBagExtension,
+    getGlobalRegisteredBagExtensions,
     bagExtensionGlobalKey
 };
