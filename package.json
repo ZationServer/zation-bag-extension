@@ -1,0 +1,30 @@
+{
+  "name": "zation-bag-extension",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "API for Zation bag extensions",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "pretest": "npm run build",
+    "build": "npm run compile",
+    "compile": "tsc -p ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZationServer/zation-bag-extension.git"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "author": {
+    "name": "Luca Scarignella",
+    "email": "lucacode1@gmail.com",
+    "url": "https://luca.scaringella.de"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  }
+}
