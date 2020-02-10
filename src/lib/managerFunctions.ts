@@ -9,12 +9,14 @@ import BagExtension from "./bagExtension";
 export const bagExtensionGlobalKey = '_ZATION_BAG_EXTENSIONS';
 
 export function registerBagExtension(extension: BagExtension) {
-    let globalBagExtensions = global[bagExtensionGlobalKey];
+    let globalBagExtensions: BagExtension[] | undefined = global[bagExtensionGlobalKey];
     if(!Array.isArray(globalBagExtensions)){
         globalBagExtensions = [];
         global[bagExtensionGlobalKey] = globalBagExtensions;
     }
-    globalBagExtensions.push(extension);
+    if(globalBagExtensions.indexOf(extension) === -1) {
+        globalBagExtensions.push(extension);
+    }
 }
 
 export function getGlobalRegisteredBagExtensions(): BagExtension[] {
