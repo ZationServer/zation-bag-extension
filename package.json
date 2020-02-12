@@ -1,6 +1,6 @@
 {
   "name": "zation-bag-extension",
-  "version": "1.3.2",
+  "version": "1.3.5",
   "license": "MIT",
   "description": "API for Zation bag extensions",
   "main": "dist/index.js",
