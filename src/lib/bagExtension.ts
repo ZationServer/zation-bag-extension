@@ -10,34 +10,24 @@ export default interface BagExtension {
      */
     name: string;
     /**
-     * Extension options for the Bag.
+     * A function that can be used as a constructor of this extension.
+     * The init function is called before the properties are added to the Bag and RequestBag.
+     */
+    init?: () => Promise<void> | void;
+    /**
+     * Define all properties that should be added to the Bag.
      * Notice that the RequestBag extends the Bag.
-     * This means that this extension options are also used for the RequestBag.
-     */
-    bag?: ExtensionOptions;
-    /**
-     * Extension options for the RequestBag.
-     */
-    requestBag?: ExtensionOptions;
-}
-
-export interface ExtensionOptions {
-    /**
-     * A function that can be used to prepare stuff for the added properties.
-     * The init function is called before the user can use the Bag or RequestBag.
-     * This references to the RequestBag or Bag.
-     *
-     * Notice that the RequestBag will be created for every request.
-     * In this case, the function is also called for every request.
-     * That means the init function on the RequestBag is much more expensive than on the Bag.
-     */
-    init?: (this: any) => Promise<void> | void;
-    /**
-     * Define all properties that should be added to the target.
-     * Notice that you only use free property names and
-     * don't conflict with other extensions.
+     * This means that the properties are also accessible from the RequestBag.
+     * Only use free property names and don't conflict with other extensions.
      * The Zation server will check it,
      * and when there is a conflict, the server won't start.
      */
-    properties: Record<string,any>;
+    bag?: Record<string,any>;
+    /**
+     * Define all properties that should be added to the RequestBag.
+     * Only use free property names and don't conflict with other extensions.
+     * The Zation server will check it,
+     * and when there is a conflict, the server won't start.
+     */
+    requestBag?: Record<string,any>;
 }
