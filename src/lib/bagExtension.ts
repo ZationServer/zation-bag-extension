@@ -11,23 +11,14 @@ export default interface BagExtension {
     name: string;
     /**
      * A function that can be used as a constructor of this extension.
-     * The init function is called before the properties are added to the Bag and RequestBag.
+     * The init function is called before the properties are added to the Bag.
      */
     init?: () => Promise<void> | void;
     /**
-     * Define all properties that should be added to the Bag.
-     * Notice that the RequestBag extends the Bag.
-     * This means that the properties are also accessible from the RequestBag.
+     * Defines all properties that should be added to the Bag.
      * Only use free property names and don't conflict with other extensions.
      * The Zation server will check it,
      * and when there is a conflict, the server won't start.
      */
-    bag?: Record<string,any>;
-    /**
-     * Define all properties that should be added to the RequestBag.
-     * Only use free property names and don't conflict with other extensions.
-     * The Zation server will check it,
-     * and when there is a conflict, the server won't start.
-     */
-    requestBag?: Record<string,any>;
+    properties: Record<string,any>;
 }
