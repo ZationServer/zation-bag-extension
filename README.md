@@ -30,7 +30,7 @@
 </h1>
 
 ## What is Zation-bag-extension
-The ***zation-bag-extension*** is an API that provides interfaces and tools for creating zation bag extensions. An extension could be adding utility functions to the Bag class and may use internal bag methods. It could be useful to create a zation-bag-extension for a zation-service like it is done for example in the [zation-service-mysql](https://github.com/ZationServer/zation-service-mysql) or [zation-service-nodemailer](https://github.com/ZationServer/zation-service-nodemailer) package.
+The ***zation-bag-extension*** is an API that provides interfaces and tools for creating zation bag extensions. An extension could be adding utility functions to the Bag class and may use internal bag methods. It could be useful to create a zation-bag-extension for a zation-service like it is done for example in the [zation-service-mysql](https://github.com/ZationServer/zation-service-mysql) or [zation-service-nodemailer](https://github.com/ZationServer/zation-service-nodemailer) packages.
 
 
 ## License
